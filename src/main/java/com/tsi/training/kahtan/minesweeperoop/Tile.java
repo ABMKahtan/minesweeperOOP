@@ -8,32 +8,43 @@ public abstract class Tile {
 
     //////////////////Attributes//////////////////
 
-    boolean isRevealed = false;
-    boolean isFlag = false;
-    List tilePosition = new ArrayList<Integer>(2);
-    Random numAssignment;
+    private boolean isRevealed;
+    private boolean isFlag;
+    private List tilePosition = new ArrayList<Integer>(2);
+
+    protected Tile() {
+    }
 
 
     //////////////////Constructors////////////////
 
-    public Random getNumAssignment() {
-        return numAssignment;
-    }
-
 
 
     //////////////////Methods/////////////////////
+    
 
-    public void putFlagOnTile(){
-        if (isFlag = false){
-            isFlag = true;
-        }
-        if (isFlag = true){
-            isFlag = false;
-        }
+    public boolean isRevealed() {
+        return isRevealed;
     }
 
+    public void setRevealed(boolean revealed) {
+        isRevealed = revealed;
+    }
 
+    public boolean isFlag() {
+        return isFlag;
+    }
 
+    public void setFlag(boolean flag) {
+        isFlag = flag;
+    }
+
+    public List getTilePosition() {
+        return tilePosition;
+    }
+
+    public void setTilePosition(List tilePosition) {
+        this.tilePosition = tilePosition;
+    }
 
 }

@@ -9,7 +9,7 @@ import java.util.Random;
     //////////////////Attributes//////////////////
 
 <span class="nc" id="L11">    boolean isRevealed = false;</span>
-<span class="nc" id="L12">    boolean isFlag = false;</span>
+    boolean isFlag;
 <span class="nc" id="L13">    List tilePosition = new ArrayList&lt;Integer&gt;(2);</span>
     Random numAssignment;
 
@@ -28,7 +28,7 @@ import java.util.Random;
 <span class="nc bnc" id="L28" title="All 2 branches missed.">        if (isFlag = false){</span>
 <span class="nc" id="L29">            isFlag = true;</span>
         }
-<span class="nc bnc" id="L31" title="All 2 branches missed.">        if (isFlag = true){</span>
+        else {
 <span class="nc" id="L32">            isFlag = false;</span>
         }
 <span class="nc" id="L34">    }</span>
