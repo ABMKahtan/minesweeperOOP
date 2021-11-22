@@ -13,14 +13,13 @@ public abstract class tile {
     Random numAssignment;
 
 
-
     //////////////////Constructors////////////////
 
     public Random getNumAssignment() {
         return numAssignment;
     }
-    public void setVoid{
-        
+    public void setVoid(){
+
     }
 
 
