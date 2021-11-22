@@ -19,6 +19,9 @@ public abstract class tile {
     public Random getNumAssignment() {
         return numAssignment;
     }
+    public void setVoid{
+        
+    }
 
 
 
