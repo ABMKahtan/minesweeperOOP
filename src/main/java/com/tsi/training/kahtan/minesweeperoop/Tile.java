@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public abstract class tile {
+public abstract class Tile {
 
     //////////////////Attributes//////////////////
 
-    boolean isMine;
-    List position = new ArrayList<Integer>();
+    boolean isRevealed = false;
+    boolean isFlag = false;
+    List tilePosition = new ArrayList<Integer>(2);
     Random numAssignment;
 
 
@@ -18,14 +19,12 @@ public abstract class tile {
     public Random getNumAssignment() {
         return numAssignment;
     }
-    public void setVoid(){
-
-    }
 
 
 
     //////////////////Methods/////////////////////
 
-    abstract String String();
+
+
 
 }

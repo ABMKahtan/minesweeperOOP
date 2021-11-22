@@ -1,10 +1,8 @@
 package com.tsi.training.kahtan.minesweeperoop;
 
-public abstract class emptyTile extends tile{
+public class MineTile extends Tile {
 
     //////////////////Attributes//////////////////
-    boolean numBoolean;
-    int tileValue;
 
 
 
@@ -14,9 +12,5 @@ public abstract class emptyTile extends tile{
 
     //////////////////Methods/////////////////////
 
-    @Override
-    String String() {
-        return "I am not a Mine";
-    }
 
 }
