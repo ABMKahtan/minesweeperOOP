@@ -24,6 +24,15 @@ public abstract class Tile {
 
     //////////////////Methods/////////////////////
 
+    public void putFlagOnTile(){
+        if (isFlag = false){
+            isFlag = true;
+        }
+        if (isFlag = true){
+            isFlag = false;
+        }
+    }
+
 
 
 
