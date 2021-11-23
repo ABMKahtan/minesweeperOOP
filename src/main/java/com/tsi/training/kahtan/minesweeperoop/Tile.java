@@ -7,8 +7,8 @@ public abstract class Tile {
 
     //////////////////Attributes//////////////////
 
-    private boolean isRevealed;
     private boolean isBomb;
+    private boolean isRevealed = false;
     private boolean isFlag = false;
 
     // I might not need a tilePosition value for the tiles as the array will remember what it is for the game.
@@ -26,8 +26,8 @@ public abstract class Tile {
         return isRevealed;
     }
 
-    public void setRevealed(boolean revealed) {
-        isRevealed = revealed;
+    public void setRevealed() {
+        isRevealed = true;
     }
 
     public boolean isFlag() {
