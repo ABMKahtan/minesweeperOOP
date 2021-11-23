@@ -1,19 +1,17 @@
 package com.tsi.training.kahtan.minesweeperoop;
 
-import java.util.Arrays;
-
 public class Board {
     // This class is going to make the board as well as define what each tile is for the minesweeper game.
     //////////////////Attributes//////////////////
-    int boardSize;
+    int boardSize = 10;
     int totalPossibleMines = (int)(Math.round((boardSize*boardSize)*0.3));
-    private int numberOfMines = 0;
 
 
     //////////////////Constructors////////////////
-    MysteryTile[][] board = new MysteryTile[boardSize][boardSize];
+    SchrodingersTile[][] board = new SchrodingersTile[boardSize][boardSize];
 
     public Board() {
+        int numberOfMines = 0;
 
         while (numberOfMines < totalPossibleMines){
             int xPos, yPos;
@@ -24,17 +22,20 @@ public class Board {
                    int bombCalc = (int)(Math.random()*5);
 
                    if (bombCalc<2){
-                       MysteryTile mineTile = new MysteryTile();
-                       board[xPos][yPos] = mineTile;
+                       SchrodingersTile mineTile = new SchrodingersTile();
                        mineTile.setBomb(true);
+                       mineTile.findDisplayString();
+                       board[xPos][yPos] = mineTile;
                        numberOfMines++;
 
 
                    }
                    else{
-                       MysteryTile emptyTile = new MysteryTile();
-                       board[xPos][yPos] = emptyTile;
+                       SchrodingersTile emptyTile = new SchrodingersTile();
                        emptyTile.setBomb(false);
+                       emptyTile.findDisplayString();
+                       board[xPos][yPos] = emptyTile;
+
                    }
                 }
             }
@@ -50,16 +51,16 @@ public class Board {
         this.boardSize = boardSize;
     }
 
-    ///////////////////////////////////////////////
+    public void displayBoard(){
 
+        for (int i = 0; i<boardSize;i++){
+            System.out.println("\n");
 
-
-
-    ///////////////////////////////////////////////
-
-
-
-
+            for (int j = 0; j<boardSize; j++){
+                System.out.print(board[i][j].getDisplayString());
+            }
+        }
+    }
 
 
 }

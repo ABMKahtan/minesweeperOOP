@@ -6,6 +6,8 @@ public abstract class Tile {
 
     private boolean isRevealed = false;
     private boolean isFlag = false;
+    private String displayString;
+
 
     //////////////////Constructors////////////////
 
@@ -32,4 +34,13 @@ public abstract class Tile {
     }
 
 
+    public String getDisplayString() {
+        return displayString;
+    }
+
+    public void setDisplayString(String displayString) {
+        this.displayString = displayString;
+    }
+
+    public abstract void setDisplayString();
 }

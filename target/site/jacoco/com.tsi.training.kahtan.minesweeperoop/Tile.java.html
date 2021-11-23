@@ -6,6 +6,8 @@
 
 <span class="fc" id="L7">    private boolean isRevealed = false;</span>
 <span class="fc" id="L8">    private boolean isFlag = false;</span>
+    private String displayString;
+
 
     //////////////////Constructors////////////////
 
@@ -16,21 +18,30 @@
 
 
     public boolean isRevealed() {
-<span class="fc" id="L19">        return isRevealed;</span>
+<span class="fc" id="L21">        return isRevealed;</span>
     }
 
     public void setRevealed() {
-<span class="fc" id="L23">        isRevealed = true;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L25">        isRevealed = true;</span>
+<span class="fc" id="L26">    }</span>
 
     public boolean isFlag() {
-<span class="fc" id="L27">        return isFlag;</span>
+<span class="fc" id="L29">        return isFlag;</span>
     }
 
     public void setFlag(boolean value) {
-<span class="fc" id="L31">        isFlag = value;</span>
-<span class="fc" id="L32">    }</span>
+<span class="fc" id="L33">        isFlag = value;</span>
+<span class="fc" id="L34">    }</span>
 
 
+    public String getDisplayString() {
+<span class="nc" id="L38">        return displayString;</span>
+    }
+
+    public void setDisplayString(String displayString) {
+<span class="nc" id="L42">        this.displayString = displayString;</span>
+<span class="nc" id="L43">    }</span>
+
+    public abstract void setDisplayString();
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

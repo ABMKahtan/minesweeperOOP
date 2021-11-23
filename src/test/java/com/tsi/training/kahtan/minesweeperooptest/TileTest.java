@@ -1,11 +1,11 @@
 package com.tsi.training.kahtan.minesweeperooptest;
 
-import com.tsi.training.kahtan.minesweeperoop.MysteryTile;
+import com.tsi.training.kahtan.minesweeperoop.SchrodingersTile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TileTest {
-    MysteryTile testTile = new MysteryTile();
+    SchrodingersTile testTile = new SchrodingersTile();
 
     @Test
     public void testIsFlag(){
