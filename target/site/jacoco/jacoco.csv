@@ -1,6 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-mineSweeperOOP,com.tsi.training.kahtan.minesweeperoop,Board,3,0,0,0,1,0,1,0,1,0
-mineSweeperOOP,com.tsi.training.kahtan.minesweeperoop,Tile,28,0,2,0,8,0,4,0,3,0
-mineSweeperOOP,com.tsi.training.kahtan.minesweeperoop,Main,4,0,0,0,2,0,2,0,2,0
-mineSweeperOOP,com.tsi.training.kahtan.minesweeperoop,MineTile,3,0,0,0,1,0,1,0,1,0
-mineSweeperOOP,com.tsi.training.kahtan.minesweeperoop,EmptyTile,3,0,0,0,1,0,1,0,1,0
