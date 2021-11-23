@@ -1,10 +1,10 @@
 package com.tsi.training.kahtan.minesweeperoop;
 
-public class EmptyTile extends Tile{
+public class MysteryTile extends Tile{
 
     //////////////////Attributes//////////////////
     private int counter = 0;
-
+    private boolean isBomb;
 
 
     //////////////////Constructors////////////////
@@ -20,6 +20,13 @@ public class EmptyTile extends Tile{
 
     public int getCounter() {
         return counter;
+    }
+    public boolean isBomb() {
+        return isBomb;
+    }
+
+    public void setBomb(boolean value) {
+        isBomb = value;
     }
 
 }

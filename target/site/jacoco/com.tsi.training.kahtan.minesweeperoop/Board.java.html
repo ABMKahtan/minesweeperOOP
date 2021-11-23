@@ -3,49 +3,46 @@
 public class Board {
     // This class is going to make the board as well as define what each tile is for the minesweeper game.
     //////////////////Attributes//////////////////
-    //use getter and setter for the boardSize
-<span class="nc" id="L7">    private int boardSize = 10;</span>
-<span class="nc" id="L8">    private int totalMines = (int)((boardSize*0.3)+1);</span>
-<span class="nc" id="L9">    private int numberOfMines = 0;</span>
+    int boardSize;
+<span class="nc" id="L7">    int totalPossibleMines = (int)(Math.round((boardSize*boardSize)*0.3));</span>
+<span class="nc" id="L8">    private int numberOfMines = 0;</span>
 
     //////////////////Constructors////////////////
-<span class="nc" id="L12">    Tile[][] board = new Tile[boardSize][boardSize];</span>
+<span class="nc" id="L11">    Tile[][] board = new Tile[boardSize][boardSize];</span>
 
-<span class="nc" id="L14">    public Board() {</span>
+<span class="nc" id="L13">    public Board() {</span>
 
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        while (numberOfMines&lt;totalMines){</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        while (numberOfMines &lt; totalPossibleMines){</span>
             int xPos, yPos;
-<span class="nc bnc" id="L18" title="All 2 branches missed.">            for (xPos=0; xPos &lt; boardSize; xPos++) {</span>
+<span class="nc bnc" id="L17" title="All 2 branches missed.">            for (xPos=0; xPos &lt; boardSize; xPos++) {</span>
 
-<span class="nc bnc" id="L20" title="All 2 branches missed.">                for (yPos=0; yPos &lt; boardSize; yPos++){</span>
+<span class="nc bnc" id="L19" title="All 2 branches missed.">                for (yPos=0; yPos &lt; boardSize; yPos++){</span>
 
-<span class="nc" id="L22">                   int bombCalc = (int)(Math.random()*5);</span>
+<span class="nc" id="L21">                   int bombCalc = (int)(Math.random()*5);</span>
 
-<span class="nc bnc" id="L24" title="All 2 branches missed.">                   if (bombCalc&lt;2){</span>
-<span class="nc" id="L25">                       MineTile nt = new MineTile();</span>
-<span class="nc" id="L26">                       board[xPos][yPos] = nt;</span>
-<span class="nc" id="L27">                       nt.setBomb(true);</span>
-<span class="nc" id="L28">                       numberOfMines++;</span>
-<span class="nc" id="L29">                   }</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">                   if (bombCalc&lt;2){</span>
+<span class="nc" id="L24">                       MysteryTile mineTile = new MysteryTile();</span>
+<span class="nc" id="L25">                       board[xPos][yPos] = mineTile;</span>
+<span class="nc" id="L26">                       mineTile.setBomb(true);</span>
+<span class="nc" id="L27">                       numberOfMines++;</span>
+<span class="nc" id="L28">                   }</span>
                    else{
-<span class="nc" id="L31">                       board[xPos][yPos] = new EmptyTile();</span>
+<span class="nc" id="L30">                       MysteryTile emptyTile = new MysteryTile();</span>
+<span class="nc" id="L31">                       board[xPos][yPos] = emptyTile;</span>
+<span class="nc" id="L32">                       emptyTile.setBomb(false);</span>
                    }
                 }
             }
+<span class="nc" id="L36">        }</span>
 
-            //nested for loop for iterating through 2d array
-<span class="nc" id="L37">            numberOfMines++;</span>
-<span class="nc" id="L38">        }</span>
-
-<span class="nc" id="L40">        board[0][0] = new EmptyTile();</span>
-<span class="nc" id="L41">    }</span>
+<span class="nc" id="L38">    }</span>
 
 
     //////////////////Methods/////////////////////
 
     public void setBoardSize(int boardSize) {
-<span class="nc" id="L47">        this.boardSize = boardSize;</span>
-<span class="nc" id="L48">    }</span>
+<span class="nc" id="L44">        this.boardSize = boardSize;</span>
+<span class="nc" id="L45">    }</span>
 
 
 

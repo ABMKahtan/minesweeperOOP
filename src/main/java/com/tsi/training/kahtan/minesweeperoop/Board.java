@@ -3,9 +3,8 @@ package com.tsi.training.kahtan.minesweeperoop;
 public class Board {
     // This class is going to make the board as well as define what each tile is for the minesweeper game.
     //////////////////Attributes//////////////////
-    //use getter and setter for the boardSize
-    private int boardSize = 10;
-    private int totalMines = (int)((boardSize*0.3)+1);
+    int boardSize;
+    int totalPossibleMines = (int)(Math.round((boardSize*boardSize)*0.3));
     private int numberOfMines = 0;
 
     //////////////////Constructors////////////////
@@ -13,7 +12,7 @@ public class Board {
 
     public Board() {
 
-        while (numberOfMines<totalMines){
+        while (numberOfMines < totalPossibleMines){
             int xPos, yPos;
             for (xPos=0; xPos < boardSize; xPos++) {
 
@@ -22,22 +21,20 @@ public class Board {
                    int bombCalc = (int)(Math.random()*5);
 
                    if (bombCalc<2){
-                       MineTile nt = new MineTile();
-                       board[xPos][yPos] = nt;
-                       nt.setBomb(true);
+                       MysteryTile mineTile = new MysteryTile();
+                       board[xPos][yPos] = mineTile;
+                       mineTile.setBomb(true);
                        numberOfMines++;
                    }
                    else{
-                       board[xPos][yPos] = new EmptyTile();
+                       MysteryTile emptyTile = new MysteryTile();
+                       board[xPos][yPos] = emptyTile;
+                       emptyTile.setBomb(false);
                    }
                 }
             }
-
-            //nested for loop for iterating through 2d array
-            numberOfMines++;
         }
 
-        board[0][0] = new EmptyTile();
     }
 
 

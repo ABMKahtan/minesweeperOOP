@@ -7,13 +7,8 @@ public abstract class Tile {
 
     //////////////////Attributes//////////////////
 
-    private boolean isBomb;
     private boolean isRevealed = false;
     private boolean isFlag = false;
-
-    // I might not need a tilePosition value for the tiles as the array will remember what it is for the game.
-    // private List tilePosition = new ArrayList<Integer>(2);
-
 
     //////////////////Constructors////////////////
 
@@ -34,25 +29,9 @@ public abstract class Tile {
         return isFlag;
     }
 
-    public void setFlag(boolean flag) {
-        isFlag = flag;
+    public void setFlag(boolean value) {
+        isFlag = value;
     }
 
-    /*
-    public List getTilePosition() {
-        return tilePosition;
-    }
 
-    public void setTilePosition(List tilePosition) {
-        this.tilePosition = tilePosition;
-    }
-    */
-
-    public boolean isBomb() {
-        return isBomb;
-    }
-
-    public void setBomb(boolean value) {
-        isBomb = value;
-    }
 }

@@ -1,12 +1,11 @@
 package com.tsi.training.kahtan.minesweeperooptest;
 
-import com.tsi.training.kahtan.minesweeperoop.EmptyTile;
-import com.tsi.training.kahtan.minesweeperoop.Tile;
+import com.tsi.training.kahtan.minesweeperoop.MysteryTile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TileTest {
-    EmptyTile testTile = new EmptyTile();
+    MysteryTile testTile = new MysteryTile();
 
     @Test
     public void testIsFlag(){
