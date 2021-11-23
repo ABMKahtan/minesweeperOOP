@@ -1,8 +1,5 @@
 package com.tsi.training.kahtan.minesweeperoop;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Tile {
 
     //////////////////Attributes//////////////////
@@ -11,6 +8,7 @@ public abstract class Tile {
     private boolean isFlag = false;
 
     //////////////////Constructors////////////////
+
 
 
 

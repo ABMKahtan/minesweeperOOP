@@ -5,9 +5,34 @@
     //////////////////Attributes//////////////////
 <span class="fc" id="L6">    private int counter = 0;</span>
     private boolean isBomb;
+<span class="fc" id="L8">    boolean isRevealed = isRevealed();</span>
+<span class="fc" id="L9">    boolean isFlag = isFlag();</span>
 
 
     //////////////////Constructors////////////////
+
+    @Override
+    public String toString() // sets a deeptostring for the Tile
+    {
+<span class="nc" id="L17">        String displayString = null;</span>
+
+<span class="nc bnc" id="L19" title="All 4 branches missed.">        if(!(isRevealed &amp;&amp; isFlag)){</span>
+<span class="nc" id="L20">            displayString = &quot;[ ? ]&quot;;</span>
+        }
+<span class="nc bnc" id="L22" title="All 4 branches missed.">        if(!isRevealed &amp;&amp; isFlag){</span>
+<span class="nc" id="L23">            displayString = &quot;[ F ]&quot;;</span>
+        }
+        else{
+<span class="nc bnc" id="L26" title="All 2 branches missed.">            if(!isBomb){</span>
+<span class="nc" id="L27">                displayString = &quot;[ &quot; + counter + &quot; ]&quot;;</span>
+            }
+            else{
+<span class="nc" id="L30">                displayString = &quot;{***}&quot;;</span>
+            }
+        }
+        
+<span class="nc" id="L34">        return displayString;</span>
+    }
 
 
 
@@ -15,19 +40,19 @@
 
 
     public void addCounter() {
-<span class="fc" id="L18">        this.counter++;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L43">        this.counter++;</span>
+<span class="fc" id="L44">    }</span>
 
     public int getCounter() {
-<span class="fc" id="L22">        return counter;</span>
+<span class="fc" id="L47">        return counter;</span>
     }
     public boolean isBomb() {
-<span class="fc" id="L25">        return isBomb;</span>
+<span class="fc" id="L50">        return isBomb;</span>
     }
 
     public void setBomb(boolean value) {
-<span class="fc" id="L29">        isBomb = value;</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L54">        isBomb = value;</span>
+<span class="fc" id="L55">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
