@@ -14,7 +14,8 @@ public class EmptyTile extends Tile{
     //////////////////Methods/////////////////////
 
 
-    public void setCounter(int counter) {
-        this.counter = counter;
+    public void addCounter() {
+        this.counter++;
     }
+
 }
