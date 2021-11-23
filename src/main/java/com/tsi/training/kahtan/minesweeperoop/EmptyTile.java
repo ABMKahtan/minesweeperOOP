@@ -3,7 +3,7 @@ package com.tsi.training.kahtan.minesweeperoop;
 public class EmptyTile extends Tile{
 
     //////////////////Attributes//////////////////
-    private int counter;
+    private int counter = 0;
 
 
 
@@ -16,6 +16,10 @@ public class EmptyTile extends Tile{
 
     public void addCounter() {
         this.counter++;
+    }
+
+    public int getCounter() {
+        return counter;
     }
 
 }

@@ -3,7 +3,7 @@
 <span class="fc" id="L3">public class EmptyTile extends Tile{</span>
 
     //////////////////Attributes//////////////////
-    private int counter;
+<span class="fc" id="L6">    private int counter = 0;</span>
 
 
 
@@ -15,8 +15,12 @@
 
 
     public void addCounter() {
-<span class="nc" id="L18">        this.counter++;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L18">        this.counter++;</span>
+<span class="fc" id="L19">    }</span>
+
+    public int getCounter() {
+<span class="fc" id="L22">        return counter;</span>
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
