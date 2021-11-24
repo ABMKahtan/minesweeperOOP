@@ -1,67 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Board.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mineSweeperOOP</a> &gt; <a href="index.source.html" class="el_package">com.tsi.training.kahtan.minesweeperoop</a> &gt; <span class="el_source">Board.java</span></div><h1>Board.java</h1><pre class="source lang-java linenums">package com.tsi.training.kahtan.minesweeperoop;
 
-public class Board {
-    // This class is going to make the board as well as define what each tile is for the minesweeper game.
-    //////////////////Attributes//////////////////
-<span class="nc" id="L6">    int boardSize = 10;</span>
-<span class="nc" id="L7">    int totalPossibleMines = (int)(Math.round((boardSize*boardSize)*0.3));</span>
+import java.util.Random;
 
+public class Board {
+
+    //////////////////Attributes//////////////////
+    SchrodingersTile[][] board;
+    private int boardSize;
+    int totalPossibleMines;
 
     //////////////////Constructors////////////////
-<span class="nc" id="L11">    SchrodingersTile[][] board = new SchrodingersTile[boardSize][boardSize];</span>
-
-<span class="nc" id="L13">    public Board() {</span>
+<span class="nc" id="L13">    public Board(int bSize) {</span>
 <span class="nc" id="L14">        int numberOfMines = 0;</span>
+<span class="nc" id="L15">        Random rng = new Random();</span>
 
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        while (numberOfMines &lt; totalPossibleMines){</span>
+        //Running the methods and setting the board initial values here:
+<span class="nc" id="L18">        setBoardSize(bSize);</span>
+<span class="nc" id="L19">        board = new SchrodingersTile[boardSize][boardSize];</span>
+<span class="nc" id="L20">        totalPossibleMines = (int)(Math.round((boardSize*boardSize)*0.25));</span>
+
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        while (numberOfMines &lt; totalPossibleMines){</span>
             int xPos, yPos;
-<span class="nc bnc" id="L18" title="All 2 branches missed.">            for (xPos=0; xPos &lt; boardSize; xPos++) {</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">            for (xPos=0; xPos &lt; boardSize; xPos++) {</span>
 
-<span class="nc bnc" id="L20" title="All 2 branches missed.">                for (yPos=0; yPos &lt; boardSize; yPos++){</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">                for (yPos=0; yPos &lt; boardSize; yPos++){</span>
 
-<span class="nc" id="L22">                   int bombCalc = (int)(Math.random()*5);</span>
+<span class="nc" id="L28">                    int bombCalc = (int)(Math.round(rng.nextDouble()*4));</span>
 
-<span class="nc bnc" id="L24" title="All 2 branches missed.">                   if (bombCalc&lt;2){</span>
-<span class="nc" id="L25">                       SchrodingersTile mineTile = new SchrodingersTile();</span>
-<span class="nc" id="L26">                       mineTile.setBomb(true);</span>
-<span class="nc" id="L27">                       mineTile.findDisplayString();</span>
-<span class="nc" id="L28">                       board[xPos][yPos] = mineTile;</span>
-<span class="nc" id="L29">                       numberOfMines++;</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">                   if (bombCalc&lt;1){</span>
+<span class="nc" id="L31">                       SchrodingersTile mineTile = new SchrodingersTile();</span>
+<span class="nc" id="L32">                       mineTile.setBomb(true);</span>
+<span class="nc" id="L33">                       mineTile.findDisplayString();</span>
+<span class="nc" id="L34">                       board[xPos][yPos] = mineTile;</span>
+<span class="nc" id="L35">                       numberOfMines++;</span>
 
 
-<span class="nc" id="L32">                   }</span>
+<span class="nc" id="L38">                   }</span>
                    else{
-<span class="nc" id="L34">                       SchrodingersTile emptyTile = new SchrodingersTile();</span>
-<span class="nc" id="L35">                       emptyTile.setBomb(false);</span>
-<span class="nc" id="L36">                       emptyTile.findDisplayString();</span>
-<span class="nc" id="L37">                       board[xPos][yPos] = emptyTile;</span>
+<span class="nc" id="L40">                       SchrodingersTile emptyTile = new SchrodingersTile();</span>
+<span class="nc" id="L41">                       emptyTile.setBomb(false);</span>
+<span class="nc" id="L42">                       emptyTile.findDisplayString();</span>
+<span class="nc" id="L43">                       board[xPos][yPos] = emptyTile;</span>
 
                    }
                 }
             }
-<span class="nc" id="L42">        }</span>
-
-
-<span class="nc" id="L45">    }</span>
-
+<span class="nc" id="L48">        }</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        for (int i = 0; i&lt;boardSize;i++){</span>
+<span class="nc" id="L50">            System.out.println(&quot;\n&quot;);</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">            for (int j = 0; j&lt;boardSize; j++){</span>
+<span class="nc" id="L52">                System.out.print(board[i][j].getDisplayString());</span>
+            }
+        }
+<span class="nc" id="L55">    }</span>
 
     //////////////////Methods/////////////////////
 
-    public void setBoardSize(int boardSize) {
-<span class="nc" id="L51">        this.boardSize = boardSize;</span>
-<span class="nc" id="L52">    }</span>
-
-    public void displayBoard(){
-
-<span class="nc bnc" id="L56" title="All 2 branches missed.">        for (int i = 0; i&lt;boardSize;i++){</span>
-<span class="nc" id="L57">            System.out.println(&quot;\n&quot;);</span>
-
-<span class="nc bnc" id="L59" title="All 2 branches missed.">            for (int j = 0; j&lt;boardSize; j++){</span>
-<span class="nc" id="L60">                System.out.print(board[i][j].getDisplayString());</span>
-            }
-        }
-<span class="nc" id="L63">    }</span>
-
-
+    public void setBoardSize(int value) {
+<span class="nc" id="L60">        boardSize = value;</span>
+<span class="nc" id="L61">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
