@@ -11,16 +11,16 @@ public class SchrodingersTile extends Tile{
     public void findDisplayString() // sets a deepToString for the Tile
     {
         if(!isRevealed() && !isFlag()){
-            setDisplayString("[ ? ]");
+            setDisplayString("[ 👀 ]");
         }
         if(!isRevealed() && isFlag()){
-            setDisplayString("[ F ]");
+            setDisplayString("[ ⛳ ]");
         }
         if(isRevealed() && !isBomb){
                 setDisplayString("[ " + counter + " ]");
         }
         if(isRevealed() && isBomb){
-                setDisplayString("{***}");
+                setDisplayString("{ 💣 }");
         }
     }
 
@@ -28,24 +28,18 @@ public class SchrodingersTile extends Tile{
 
     //////////////////Methods/////////////////////
 
-
     public void addCounter() {
         this.counter++;
     }
-
     public int getCounter() {
         return counter;
     }
     public boolean isBomb() {
         return isBomb;
     }
-
     public void setBomb(boolean value) {
         isBomb = value;
     }
 
-    @Override
-    public void setDisplayString() {
 
-    }
 }
