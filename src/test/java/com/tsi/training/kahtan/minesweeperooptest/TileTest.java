@@ -10,8 +10,8 @@ public class TileTest {
     @Test
     public void testIsFlag(){
         Assertions.assertEquals(false,testTile.isFlag(),"isFlag initial value is not set");
-        testTile.setFlag(true);
-        Assertions.assertEquals(true,testTile.isFlag(),"isFlag value does Not change");
+        testTile.setFlag();
+        Assertions.assertEquals(true,testTile.isFlag()," isFlag value does Not change");
 
     }
     @Test
@@ -24,10 +24,9 @@ public class TileTest {
     }
     @Test
     public void testIsBomb(){
-        testTile.setBomb(true);
+        Assertions.assertEquals(false,testTile.isBomb(),"Tile Boolean does not initialise to false");
+        testTile.setBomb();
         Assertions.assertEquals(true, testTile.isBomb(),"Tile Boolean does not change to true" );
-        testTile.setBomb(false);
-        Assertions.assertEquals(false,testTile.isBomb(),"Tile Boolean does not change to false");
     }
     @Test
     public void testTileCounter(){
